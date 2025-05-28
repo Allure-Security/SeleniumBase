@@ -1,9 +1,10 @@
 """Setup steps for installing SeleniumBase dependencies and plugins.
 (Uses selenium 4.x and is compatible with Python 3.8+)"""
-from setuptools import setup, find_packages  # noqa: F401
+
 import os
 import sys
 
+from setuptools import find_packages, setup  # noqa: F401
 
 this_dir = os.path.abspath(os.path.dirname(__file__))
 long_description = None
@@ -151,86 +152,86 @@ setup(
     install_requires=[
         'pip>=25.0.1;python_version<"3.9"',
         'pip>=25.1.1;python_version>="3.9"',
-        'packaging>=25.0',
+        "packaging>=24.2",
         'setuptools~=70.2;python_version<"3.10"',  # Newer ones had issues
         'setuptools>=80.8.0;python_version>="3.10"',
-        'wheel>=0.45.1',
-        'attrs>=25.3.0',
+        "wheel>=0.45.1",
+        "attrs>=25.3.0",
         "certifi>=2025.4.26",
         "exceptiongroup>=1.3.0",
         'websockets~=13.1;python_version<"3.9"',
         'websockets>=15.0.1;python_version>="3.9"',
         'filelock~=3.16.1;python_version<"3.9"',
         'filelock>=3.18.0;python_version>="3.9"',
-        'fasteners>=0.19',
+        "fasteners>=0.19",
         "mycdp>=1.2.0",
         "pynose>=1.5.4",
         'platformdirs>=4.3.6;python_version<"3.9"',
         'platformdirs>=4.3.8;python_version>="3.9"',
-        'typing-extensions>=4.13.2',
+        "typing-extensions>=4.13.2",
         "sbvirtualdisplay>=1.4.0",
         'MarkupSafe==2.1.5;python_version<"3.9"',
         'MarkupSafe>=3.0.2;python_version>="3.9"',
         "Jinja2>=3.1.6",
         "six>=1.17.0",
-        'parse>=1.20.2',
-        'parse-type>=0.6.4',
-        'colorama>=0.4.6',
-        'pyyaml>=6.0.2',
-        'pygments>=2.19.1',
+        "parse>=1.20.2",
+        "parse-type>=0.6.4",
+        "colorama>=0.4.6",
+        "pyyaml>=6.0.2",
+        "pygments>=2.19.1",
         'pyreadline3>=3.5.3;platform_system=="Windows"',
         "tabcompleter>=1.4.0",
         "pdbp>=1.7.0",
         "idna==3.10",
-        'chardet==5.2.0',
-        'charset-normalizer>=3.4.2,<4',
+        "chardet==5.2.0",
+        "charset-normalizer>=3.4.2,<4",
         'urllib3>=1.26.20,<2;python_version<"3.10"',
         'urllib3>=1.26.20,<2.5.0;python_version>="3.10"',
-        'requests==2.32.3',
-        'sniffio==1.3.1',
-        'h11==0.16.0',
-        'outcome==1.3.0.post0',
+        "requests==2.32.3",
+        "sniffio==1.3.1",
+        "h11==0.16.0",
+        "outcome==1.3.0.post0",
         'trio==0.27.0;python_version<"3.9"',
         'trio==0.30.0;python_version>="3.9"',
-        'trio-websocket==0.12.2',
-        'wsproto==1.2.0',
-        'websocket-client==1.8.0',
+        "trio-websocket==0.12.2",
+        "wsproto==1.2.0",
+        "websocket-client==1.8.0",
         'selenium==4.27.1;python_version<"3.9"',
         'selenium==4.32.0;python_version>="3.9" and python_version<"3.10"',
         'selenium==4.33.0;python_version>="3.10"',
         'cssselect==1.2.0;python_version<"3.9"',
         'cssselect==1.3.0;python_version>="3.9"',
         "sortedcontainers==2.4.0",
-        'execnet==2.1.1',
-        'iniconfig==2.1.0',
+        "execnet==2.1.1",
+        "iniconfig==2.1.0",
         'pluggy==1.5.0;python_version<"3.9"',
         'pluggy==1.6.0;python_version>="3.9"',
-        'pytest==8.3.5',
+        "pytest==8.3.5",
         "pytest-html==4.0.2",  # Newer ones had issues
-        'pytest-metadata==3.1.1',
+        "pytest-metadata==3.1.1",
         "pytest-ordering==0.6",
         'pytest-rerunfailures==14.0;python_version<"3.9"',
         'pytest-rerunfailures==15.1;python_version>="3.9"',
         'pytest-xdist==3.6.1;python_version<"3.9"',
         'pytest-xdist==3.7.0;python_version>="3.9"',
-        'parameterized==0.9.0',
+        "parameterized==0.9.0",
         "behave==1.2.6",
-        'soupsieve==2.7',
+        "soupsieve==2.7",
         "beautifulsoup4==4.13.4",
-        'pyotp==2.9.0',
+        "pyotp==2.9.0",
         'python-xlib==0.33;platform_system=="Linux"',
-        'markdown-it-py==3.0.0',
-        'mdurl==0.1.2',
-        'rich>=14.0.0,<15',
+        "markdown-it-py==3.0.0",
+        "mdurl==0.1.2",
+        "rich>=14.0.0,<15",
     ],
     extras_require={
         # pip install -e .[allure]
         # Usage: pytest --alluredir=allure_results
         # Serve: allure serve allure_results
         "allure": [
-            'allure-pytest>=2.13.5',
-            'allure-python-commons>=2.13.5',
-            'allure-behave>=2.13.5',
+            "allure-pytest>=2.13.5",
+            "allure-python-commons>=2.13.5",
+            "allure-behave>=2.13.5",
         ],
         # pip install -e .[coverage]
         # Usage: coverage run -m pytest; coverage html; coverage report
@@ -255,7 +256,7 @@ setup(
         # (Not needed for debugging anymore. SeleniumBase now includes "pdbp".)
         "ipdb": [
             "ipdb==0.13.13",
-            'ipython==7.34.0',
+            "ipython==7.34.0",
         ],
         # pip install -e .[mss]
         # (An optional library for tile_windows() in CDP Mode.)
@@ -270,7 +271,7 @@ setup(
             'pdfminer.six==20250506;python_version>="3.9"',
             'cryptography==39.0.2;python_version<"3.9"',
             'cryptography==45.0.3;python_version>="3.9"',
-            'cffi==1.17.1',
+            "cffi==1.17.1",
             "pycparser==2.22",
         ],
         # pip install -e .[pillow]
@@ -301,21 +302,21 @@ setup(
         ],
         # pip install -e .[selenium-stealth]
         "selenium-stealth": [
-            'selenium-stealth==1.0.6',
+            "selenium-stealth==1.0.6",
         ],
         # pip install -e .[selenium-wire]
         "selenium-wire": [
-            'selenium-wire==5.1.0',
-            'pyOpenSSL==24.2.1',
-            'pyparsing>=3.1.4',
-            'Brotli==1.1.0',
-            'blinker==1.7.0',  # Newer ones had issues
-            'h2==4.1.0',
-            'hpack==4.0.0',
-            'hyperframe==6.0.1',
-            'kaitaistruct==0.10',
-            'pyasn1==0.6.1',
-            'zstandard==0.23.0',
+            "selenium-wire==5.1.0",
+            "pyOpenSSL==24.2.1",
+            "pyparsing>=3.1.4",
+            "Brotli==1.1.0",
+            "blinker==1.7.0",  # Newer ones had issues
+            "h2==4.1.0",
+            "hpack==4.0.0",
+            "hyperframe==6.0.1",
+            "kaitaistruct==0.10",
+            "pyasn1==0.6.1",
+            "zstandard==0.23.0",
         ],
     },
     packages=[
@@ -352,10 +353,7 @@ setup(
             "page_source = seleniumbase.plugins.page_source:PageSource",
             "screen_shots = seleniumbase.plugins.screen_shots:ScreenShots",
             "test_info = seleniumbase.plugins.basic_test_info:BasicTestInfo",
-            (
-                "db_reporting = "
-                "seleniumbase.plugins.db_reporting_plugin:DBReporting"
-            ),
+            ("db_reporting = " "seleniumbase.plugins.db_reporting_plugin:DBReporting"),
             "s3_logging = seleniumbase.plugins.s3_logging_plugin:S3Logging",
         ],
         "pytest11": ["seleniumbase = seleniumbase.plugins.pytest_plugin"],
